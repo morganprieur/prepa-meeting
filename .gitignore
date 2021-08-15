@@ -127,3 +127,7 @@ nb-configuration.xml
 
 # dossiers persos 
 perso/ 
+
+# workspace
+codecitoyen.code-workspace
+
