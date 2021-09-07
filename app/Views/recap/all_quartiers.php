@@ -4,7 +4,7 @@
 // ini_set("display_errors", 1);
 // end #devOnly
 ?> 
-<h2><?= esc($title) ?></h2>
+<!-- <h2><?php // esc($title) ?></h2> -->
 
 <?php if (! empty($quartier) && is_array($quartier)) : ?>
 
@@ -15,10 +15,11 @@
         <!-- div class="main">
             <?php /* esc($quartier_item['body']) */ ?>
         </div -->
-        <p><?php if(!empty($quartier_item['slug'])) 
-          echo '<a href="/gup/'.esc($quartier_item['slug'], 'url').'">View article</a>';
-          ?>
-        </p>
+        <!-- <p>
+            <?php// if(!empty($quartier_item['slug'])) 
+                // echo '<a href="/quartiers/'.esc($quartier_item['slug'], 'url').'">View article</a>';
+            ?>
+        </p> -->
     <?php endforeach; ?>
 
 <?php else : ?>

@@ -34,8 +34,9 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 
 // $routes->get('/', 'Home::index');
-$routes->get('gup/(:segment)', 'Quartier::view/$1');
-$routes->get('gup/', 'Quartier::index');
+$routes->get('quartiers/', 'Quartier::index');
+$routes->get('gup/', 'Sujet::index');
+$routes->get('sujet/(:segment)', 'Sujet::view/$1');
 $routes->get('(:any)', 'Pages::view/$1');
 
 

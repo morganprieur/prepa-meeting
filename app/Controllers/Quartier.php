@@ -10,27 +10,27 @@ class Quartier extends Controller {
         $model = new QuartierModel();
 
         $data = [
-          'quartier' => $model->getQuartier(),
+          'quartier' => $model->getQuartiers(),
           'title' => 'Tous les quartiers'
         ];
 
-        // echo view('templates/header', $data);
+        echo view('templates/header', $data);
         echo view('recap/all_quartiers.php', $data);
-        // echo view('templates/footer', $data);
+        echo view('templates/footer', $data);
     }
 
-    public function view($slug = null) {
-        $model = new QuartierModel();
+    // public function view($qu_id = null) {
+    //     $model = new QuartierModel();
 
-        $data['quartier'] = $model->getQuartier($slug);
+    //     $data['quartier'] = $model->getQuartier($qu_id);
 
-        if(empty($data['quartier'])) {
-          throw new \CodeIgniter\Exceptions\PageNotFoundException('Cannot find the dept: '.$slug);
-        }
-        $data['title'] = $data['quartier']['title'];
+    //     if(empty($data['quartier'])) {
+    //       throw new \CodeIgniter\Exceptions\PageNotFoundException('Cannot find the dept: '.$slug);
+    //     }
+    //     $data['title'] = $data['quartier']['nom_quartier'];
         
-        // echo view('templates/header', $data);
-        echo view('recap/all_quartiers.php', $data);
-        // echo view('templates/footer', $data);
-    }
+    //     echo view('templates/header', $data);
+    //     echo view('recap/all_quartiers.php', $data);
+    //     echo view('templates/footer', $data);
+    // }
 }

@@ -2,7 +2,7 @@
 
 class QuartierEntity {
 
-  protected $id;
+  protected $qu_id;
   protected $nom_quartier;
 
   

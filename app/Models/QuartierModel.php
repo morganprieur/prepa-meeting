@@ -8,13 +8,13 @@ class QuartierModel extends Model
 {
     protected $table = 'quartier';
 
-    public function getQuartier($slug=false) {
+    public function getQuartiers($slug=false) {
         if($slug==false) {
             return $this->findAll();
         }
 
         return $this->asArray()
-                    ->where(['slug'=>$smug])
+                    ->where(['qu_id'=>$qu_id])
                     ->first();
     }
 
