@@ -64,6 +64,7 @@ ini_set("display_errors", 1);
         table {
             margin: 50px auto;
             background-color: silver;
+            width: 95%;
         }
         tr:first-child > th {
             background-color: silver;
@@ -73,10 +74,10 @@ ini_set("display_errors", 1);
             border-collapse: collapse;
         }
         tr {
-            min-height: 50px;
+            min-height: 70px;
         }
         th, td {
-            padding: .2em;
+            padding: 1em .5em;
             background-color: white;
         }
         footer {
