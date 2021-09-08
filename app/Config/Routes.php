@@ -34,10 +34,15 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 
 // $routes->get('/', 'Home::index');
+$routes->match(['get', 'post'], 'gup/new_subject', 'Sujet::create');
+// $routes->match(['get', 'post'], 'news/create', 'News::create');
 $routes->get('quartiers/', 'Quartier::index');
 $routes->get('gup/', 'Sujet::index');
-$routes->get('sujet/(:segment)', 'Sujet::view/$1');
+$routes->get('gup/(:segment)', 'Sujet::view/$1');
 $routes->get('(:any)', 'Pages::view/$1');
+
+//	success
+$routes->get('statics/success', 'Sujet::create');
 
 
 /*

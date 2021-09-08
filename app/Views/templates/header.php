@@ -54,12 +54,21 @@ ini_set("display_errors", 1);
         .color-orange {
             color: orange;
         }
-        .padtop20 {
+        .padtop40 {
             padding-top: 40px;
         }
-        .main {
+        .container {
+            width: 95%;
+            margin: 0 auto;
             margin-bottom: 20px;
-            min-height: 500px;
+            min-height: 700px;
+        }
+        .main {
+            
+        }
+        .one {
+            width: 40%;
+            margin: 0 auto;
         }
         table {
             margin: 50px auto;
@@ -80,18 +89,21 @@ ini_set("display_errors", 1);
             padding: 1em .5em;
             background-color: white;
         }
+        .actions {
+            width: 10em;
+            margin: 7em auto 0;
+        }
         footer {
-            height: 100px;
+            height: 50px;
             margin-bottom: 20px;
             text-align: center;
             color: silver;
         }
-        footer em {
-            
-        }
+        
     </style>
 </head>
 <body>
+    <div class="container">
 
 <h1 class="text-center color-white">Conseil Citoyen st-gilles : tableau GUP</h1>
 
@@ -99,5 +111,5 @@ ini_set("display_errors", 1);
 
 <h4 style="font-weight: normal; margin-top: 50px; letter-spacing: 1px" id="travaux" class="text-center color-orange">Page en construction... Merci de patienter :)</h4>
 
-    <h3 class="padtop20 color-white"><?= esc($title) ?></h3>
+    <h3 class="padtop40 color-white"><?= esc($title) ?></h3>
     

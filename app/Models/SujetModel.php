@@ -8,6 +8,17 @@ class SujetModel extends Model {
 
   protected $table = 'sujet';
 
+  protected $allowedFields = [
+    'constat', 
+    'quartier', 
+    'adresse', 
+    'deja_vu', 
+    'reponse', 
+    'suivi', 
+    'commentaire', 
+    'resolu'
+  ];
+
   public function getSujets($id = FALSE) {
 
     // $sujets = $this->join(
@@ -38,6 +49,24 @@ class SujetModel extends Model {
     // return $sujets;
   }
 
+  public function setSujet() {  //  id=FALSE 
+
+    $data = [
+      'constat' => $constat,
+      'quartier' => $quartier,
+      'adresse' => $adresse,
+      'deja_vu' => $deja_vu,
+      'reponse' => $reponse,
+      'commentaire' => $commentaire,
+      'resolu' => $resolu
+    ];
+
+    //  voir la doc : 
+    return $this->insert($data);
+
+  }
+
 }
+
 
 

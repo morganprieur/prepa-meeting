@@ -3,7 +3,7 @@
 
 <?php 
 
-echo '<div class="main row bg-silver">
+echo '<div class="main row bg-silver padtop40">
 <table class="table table-striped">
   <thead>
     <th scope="col">Identifiant</th>
@@ -36,7 +36,7 @@ if (! empty($sujets) && is_array($sujets)) :
           <td>'. esc($sujets_item['commentaire']) .'</td>
           <td class="text-center">'. esc($sujets_item['resolu']) .'</td>
           <td class="text-center">
-            <a href="/sujet/'.esc($sujets_item['id'], 'url').'">Voir le sujet</a>
+            <a href="/gup/'.esc($sujets_item['id'], 'url').'">Voir le sujet</a>
             
             <a class="btn btn-orange strike" href="#">&nbsp;Modifier&nbsp;</a>
           </td>
@@ -57,14 +57,11 @@ else :
 
 endif;
 
+echo 
+'<div class="actions text-center">
+  <p>
+    <a href="/gup/new_subject">Ajouter un sujet</a>
+  </p>
+</div>';
 
 
-// protected $id;
-//   protected $constat;
-//   protected $fk_quartier;
-//   protected $adresse;
-//   protected $deja_vu;
-//   protected $reponse;
-//   protected $suivi;
-//   protected $commentaire;
-//   protected $resolu;
