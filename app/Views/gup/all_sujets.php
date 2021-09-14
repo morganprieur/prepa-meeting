@@ -1,5 +1,8 @@
 
+<h4 style="font-size: 1.5em; margin-top: 30px; color: silver" class="color-silver"><?= esc($docwork) ?></h4>
 
+<h3 class="padtop40 color-white"><?= esc($title) ?></h3>
+      
 
 <?php 
 
@@ -44,14 +47,13 @@ if (! empty($sujets) && is_array($sujets)) :
           <p>  
             <a class="btn btn-orange" href="/gup/'.esc($sujets_item['id'], 'url').'">Voir le sujet</a>
           </p>
+          <p>  
+            <a class="btn btn-orange strike" href="#">&nbsp;Modifier&nbsp;</a>
+          </p>
           </td>
         </tr>';
 
-        /** exemple button BS4 
-         *           <p>  
-          *  <a class="btn btn-orange strike" href="#">&nbsp;Modifier&nbsp;</a>
-          * </p>
-         */
+          
 
     endforeach;
 
@@ -64,6 +66,7 @@ else :
     echo '<h3>Aucun sujet pour le moment</h3>
 
     <p>Unable to find any subjects for you.</p>';
+    
 
 endif;
 
@@ -73,7 +76,9 @@ echo
     <a href="/gup/new_subject">Ajouter un sujet</a>
   </p>
 
-  <button type="button" class="btn btn-primary">Primary</button>
 </div>';
 
+/*  exemple button BS4 
+    <button type="button" class="btn btn-primary">Primary</button>
+*/
 

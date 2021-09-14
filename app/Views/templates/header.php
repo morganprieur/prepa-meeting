@@ -26,9 +26,9 @@ ini_set("display_errors", 1);
 
 <h1 class="text-center color-white">Conseil Citoyen st-gilles : tableau GUP</h1>
 
-<h3 style="font-size: 1.5em; margin-top: 30px" class="color-silver">Document de travail</h3>
 
-<h4 style="font-weight: normal; margin-top: 50px; letter-spacing: 1px" id="travaux" class="text-center color-orange">Page en construction... Merci de patienter :)</h4>
 
-    <h3 class="padtop40 color-white"><?= esc($title) ?></h3>
+<h4 style="font-weight: normal; margin-top: 50px; letter-spacing: 1px" id="travaux" class="text-center color-orange">Site en construction...<br>Le contenu n'est pas contractuel et les comportements peuvent ne pas correspondre à vos attentes.<br>Merci de patienter :)</h4>
+
+    
     

@@ -1,11 +1,13 @@
-<!DOCTYPE html>
+
+
+<!-- !DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>Welcome to CodeIgniter 4!</title>
 	<meta name="description" content="The small framework with powerful features">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
+	<link rel="shortcut icon" type="image/png" href="/favicon.ico"/ -->
 
 	<!-- STYLES -->
 
@@ -198,7 +200,7 @@
 <!-- HEADER: MENU + HEROE SECTION -->
 <header>
 
-	<div class="menu">
+	<!-- div class="menu">
 		<ul>
 			<li class="logo"><a href="https://codeigniter.com" target="_blank"><img height="44" title="CodeIgniter Logo"
 																					alt="Visit CodeIgniter.com official website!"
@@ -215,11 +217,11 @@
 					href="https://github.com/codeigniter4/CodeIgniter4/blob/develop/CONTRIBUTING.md" target="_blank">Contribute</a>
 			</li>
 		</ul>
-	</div>
+	</div -->
 
 	<div class="heroe">
 
-		<h1>Welcome to CodeIgniter <?= CodeIgniter\CodeIgniter::CI_VERSION ?></h1>
+		<h1><?php esc($data['title']) ?></h1>
 
 		<h2>The small framework with powerful features</h2>
 

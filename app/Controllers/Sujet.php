@@ -10,11 +10,14 @@ class Sujet extends Controller {
   public function index() {
     $sujet_model = new SujetModel();
     
-
     $data = [
       'sujets' => $sujet_model->getSujets(),
-      'title' => 'Tous les sujets'
+      'title' => 'Tous les sujets',
+      'docwork' => 'Document de travail'
     ];
+
+    // echo '<br>'.__METHOD__.' $data : ';
+    // var_dump($data);
 
     echo view('templates/header', $data);
     echo view('gup/all_sujets', $data);

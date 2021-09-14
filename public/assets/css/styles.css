@@ -65,7 +65,8 @@ a:hover {
   margin: 0 auto;
 }
 table {
-  margin: 50px auto;
+  /* margin: 50px auto; */
+  margin: 0 auto;
   background-color: silver;
   width: 95%;
 }
