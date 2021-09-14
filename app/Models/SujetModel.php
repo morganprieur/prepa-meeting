@@ -21,32 +21,33 @@ class SujetModel extends Model {
 
   public function getSujets($id = FALSE) {
 
-    // $sujets = $this->join(
-    //   'quartier', 
-    //   'quartier.qu_id=sujet.fk_quartier')
-    //                   ->asArray()
-    //                   ->where(['sj_id' => $sj_id])
-    //                   ->first();
-    // join($table, $cond[, $type = ''[, $escape = null]])
-    // Parameters:	
-
-    //     $table (string) – Table name to join
-    //     $cond (string) – The JOIN ON condition
-    //     $type (string) – The JOIN type
-    //     $escape (bool) – Whether to escape values and identifiers
-
-
     if($id == FALSE) {
-      return $this->findAll();
-    }
+      $sujets = $this->findAll();
 
-    // echo '<br>'.__METHOD__.' id : ';
-    // var_dump($id);
+      // $i;
+      $sujets_actifs = array();
+      for($i = 0; $i < count($sujets); $i++) {
+        if($sujets[$i]['resolu'] == '0') {
+          $sujets_actifs[] = $sujets[$i]; 
+        }
+      }
+        return $sujets_actifs; 
+        
+    }
 
     return $this->asArray()
                 ->where(['id' => $id])
                 ->first();
-    // return $sujets;
+
+    /**************** DOC : PASSER LES RÉSULTATS SOUS FORME D'OBJETS **************************/
+    // Return as standard objects
+    // $users = $userModel->asObject()->where('status', 'active')->findAll();
+
+    // Return as custom class instances
+    // $users = $userModel->asObject('User')->where('status', 'active')->findAll();
+
+
+
   }
 
   public function setSujet() {  //  id=FALSE 
@@ -67,6 +68,10 @@ class SujetModel extends Model {
   }
 
 }
+
+// echo '<br>'.__METHOD__.' $sujets[$i] : ';
+// var_dump($sujets[$i]);
+
 
 
 
