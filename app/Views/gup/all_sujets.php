@@ -17,11 +17,12 @@ echo '<div class="main row bg-silver padtop40">
     <th scope="col">Réponse si Oui</th>
     <th scope="col">Suivi si Oui</th>
     <th scope="col">Commentaire</th>
-    <th scope="col">Résolu ?<br>(à retirer)</th>
+    
     <th scope="col">Actions</th>
   </thead>
   <tbody>';
 
+  //  <th scope="col">Résolu ?<br>(à retirer)</th> 
 
 if (! empty($sujets) && is_array($sujets)) : 
 
@@ -42,7 +43,7 @@ if (! empty($sujets) && is_array($sujets)) :
           '<td>'. esc($sujets_item['reponse']) .'</td>
           <td>'. esc($sujets_item['suivi']) .'</td>
           <td>'. esc($sujets_item['commentaire']) .'</td>
-          <td class="text-center">'. esc($sujets_item['resolu']) .'</td>
+          
           <td class="text-center">
           <p>  
             <a class="btn btn-orange" href="/gup/'.esc($sujets_item['id'], 'url').'">Voir le sujet</a>
@@ -53,6 +54,7 @@ if (! empty($sujets) && is_array($sujets)) :
           </td>
         </tr>';
 
+        //  <td class="text-center">'. esc($sujets_item['resolu']) .'</td> 
           
 
     endforeach;
