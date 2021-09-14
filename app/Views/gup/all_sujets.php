@@ -71,10 +71,11 @@ else :
 endif;
 
 echo 
-'<div class="actions text-center">
-  <p class="btn btn-orange">
-    <a href="/gup/new_subject">Ajouter un sujet</a>
-  </p>
+'<div class="actions-float text-center row">
+  <p class="btn btn-orange col-md-5">
+    <a href="/gup/new_subject"><i class="fas fa-plus"></i>&nbsp;
+      Enregistrer<br>un sujet</a>
+    </p>
 
 </div>';
 

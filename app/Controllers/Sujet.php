@@ -7,6 +7,10 @@ use CodeIgniter\Controller;
 
 class Sujet extends Controller {
 
+  /**
+   * Page récap des sujets dans un tableau
+   * url : /gup
+   */
   public function index() {
     $sujet_model = new SujetModel();
     
@@ -21,6 +25,11 @@ class Sujet extends Controller {
     echo view('templates/footer', $data);
   }
 
+
+  /**
+   * Affichage d'1 sujet, en colonne
+   * url : /gup/{id}
+   */
   public function view($id = null) {
     $sujet_model = new SujetModel();
     // $quartier_model = new QuartierModel();
@@ -43,9 +52,21 @@ class Sujet extends Controller {
     echo view('templates/footer', $data);
   }
 
+
+  /** 
+   * Formulaire d'ajout d'un sujet : formulaire 
+   * url : /gup/new_subject
+   */
   public function create() { 
     $sujet_model = new SujetModel();
 
+    $data = [
+      'title' => 'Ajouter un sujet',
+      'retour_title' => 'Retour liste des sujets',
+      'success' => 'Le sujet a bien été enregistré'
+    ];
+
+    //  Si les données du formulaire sont validées, les envoyer au modèle et afficher la page de succès
     if ($this->request->getMethod() === 'post' && $this->validate([
         // 'title' => 'required|min_length[3]|max_length[255]',
         // 'body'  => 'required',
@@ -56,24 +77,26 @@ class Sujet extends Controller {
             // 'slug'  => url_title($this->request->getPost('title'), '-', true),
             'quartier'  => $this->request->getPost('quartier'),
             'adresse'  => $this->request->getPost('adresse'),
+            'commentaire'  => $this->request->getPost('commentaire'),
             'deja_vu'  => $this->request->getPost('deja_vu'),
             'reponse'  => $this->request->getPost('reponse'),
             'suivi'  => $this->request->getPost('suivi'),
-            'commentaire'  => $this->request->getPost('commentaire'),
             'resolu'  => $this->request->getPost('resolu')
         ]);
 
-        echo view('statics/success');
-        echo view('templates/retour');
+        echo view('templates/header', $data);
+        echo view('statics/success', $data);
+        // echo view('templates/retour', $data);
+        echo view('templates/footer');
 
+        //  sinon afficher le formulaire 
     } else {
-        echo view('templates/header', ['title' => 'Ajouter un sujet']);
+        echo view('templates/header', $data);
         echo view('gup/new_subject');
-        echo view('templates/retour');
+        echo view('templates/retour', $data);
         echo view('templates/footer');
     }
   }
-
 }
 
 
