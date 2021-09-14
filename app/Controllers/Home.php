@@ -8,12 +8,15 @@ class Home extends BaseController
 	{
 
 		$data = [
-			'title' => 'Bienvenue sur cette page'
-
+			'title' => 'Bienvenue sur cette page',
+			'retour_title' => 'Voir la liste des sujets'
 		];
 
-		return view('templates/header', $data);
-		return view('welcome');
-		return view('templates/footer');
+		
+		echo view('templates/header', $data);
+		echo view('templates/travaux');
+		echo view('welcome', $data);
+		echo view('templates/retour', $data);
+		echo view('templates/footer', $data);
 	}
 }

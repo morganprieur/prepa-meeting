@@ -42,9 +42,6 @@ a:hover {
 .color-silver {
   color: silver;
 }
-.color-orange {
-  color: orange;
-}
 .padtop40 {
   padding-top: 40px;
 }
@@ -95,5 +92,21 @@ footer {
   margin-bottom: 20px;
   text-align: center;
   color: silver;
+}
+
+/***************  TRAVAUX  ******************/
+
+#travaux {
+  display: block;
+  height: 15em;
+  width: 35em;
+  text-align: center;
+  border: .5em orangered solid;
+  background-color: silver;
+  margin: 3em auto;
+  padding-top: 3em;
+  /* color: orange; */
+  letter-spacing: 1px;
+  line-height: 1.2em;
 }
 

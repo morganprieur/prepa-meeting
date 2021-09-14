@@ -24,11 +24,13 @@ ini_set("display_errors", 1);
 <body>
     <div class="recipient">
 
-<h1 class="text-center color-white">Conseil Citoyen st-gilles : tableau GUP</h1>
+        <h1 class="text-center color-white">Conseil Citoyen st-gilles : tableau GUP</h1>
+
+        
 
 
 
-<h4 style="font-weight: normal; margin-top: 50px; letter-spacing: 1px" id="travaux" class="text-center color-orange">Site en construction...<br>Le contenu n'est pas contractuel et les comportements peuvent ne pas correspondre à vos attentes.<br>Merci de patienter :)</h4>
+
 
     
     

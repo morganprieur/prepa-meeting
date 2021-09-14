@@ -16,9 +16,6 @@ class Sujet extends Controller {
       'docwork' => 'Document de travail'
     ];
 
-    // echo '<br>'.__METHOD__.' $data : ';
-    // var_dump($data);
-
     echo view('templates/header', $data);
     echo view('gup/all_sujets', $data);
     echo view('templates/footer', $data);
@@ -28,7 +25,11 @@ class Sujet extends Controller {
     $sujet_model = new SujetModel();
     // $quartier_model = new QuartierModel();
 
-    $data['sujet'] = $sujet_model->getSujets($id);
+    $data = [
+      'sujet' => $sujet_model->getSujets($id),
+      'retour_title' => 'Retour liste des sujets',
+      'docwork' => 'Document de travail'
+    ];
     // $data['sujet']['quartier'] = $quartier_model->getQuartiers($data['sujet']['fk_quartier']);
 
     if(empty($data['sujet'])) {
