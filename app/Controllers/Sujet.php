@@ -31,7 +31,7 @@ class Sujet extends Controller {
     if(empty($data['sujet'])) {
       throw new \CodeIgniter\Exceptions\PageNotFoundException('Cannot find the subject: '.$id);
     }
-    $data['title'] = $data['sujet']['id'].' '.$data['sujet']['constat'];
+    $data['title'] = $data['sujet']['id'].' - '.$data['sujet']['constat'];
     
     echo view('templates/header', $data);
     echo view('gup/one_sujet', $data);
