@@ -12,6 +12,7 @@ a {
   text-decoration: none;
   color: white;
   /* background-color: #ff8300; */
+  /* background-color: orangered;  */
   display: block;
   padding: .1em;
   width: 95%;
@@ -22,6 +23,7 @@ a {
 a:hover {
   color: black !important;
   text-decoration: none !important;
+  /* background-color: orange;  */
 }
 hr {
   background-color: silver !important;
@@ -30,22 +32,22 @@ hr {
 table {
   /* margin: 50px auto; */
   margin: 0 auto;
-  background-color: silver;
+  background-color: white;
   width: 95%;
 }
 tr:first-child > th {
   background-color: silver;
 }
-.table, th, td {
-  border: 1px solid black; 
-  border-collapse: collapse;
+table, th, td {
+  /* border: 1px solid black;  */
+  /* border-collapse: collapse; */
 }
 tr {
   min-height: 70px;
 }
 th, td {
-  padding: 1em .5em;
-  background-color: white;
+  /* padding: 1em .5em; */
+  /* background-color: white; */
   text-align: center;
   vertical-align: middle;
 }
@@ -72,6 +74,7 @@ th, td {
 .btn-orange {
   color: white;
   font-weight: bold;
+  border-radius: 10px;
 }
 .btn-orange:hover {
   background-color: orange;
@@ -98,7 +101,8 @@ th, td {
   min-height: 700px;
 }
 .btn-orange {
-  background-color: #ff8300;
+  /* background-color: #ff8300; */
+  background-color: orangered;
 }
 .one {
   width: 40%;

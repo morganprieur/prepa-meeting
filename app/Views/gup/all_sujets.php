@@ -5,9 +5,9 @@
       
 
 <?php 
-
-echo '<div class="main row bg-silver padtop40">
-<table class="table table-striped">
+//   row bg-silver
+echo '<div class="main padtop40">
+<table class="table table-striped table-hover">
   <thead>
     <th scope="col">Identifiant</th>
     <th scope="col">Sujet</th>
