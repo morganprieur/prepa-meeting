@@ -1,9 +1,10 @@
 
-<h4 style="font-size: 1.5em; margin-top: 30px; color: silver" class="color-silver"><?= esc($docwork) ?></h4>
+<!-- <h4 style="font-size: 1.5em; margin-top: 30px; color: silver" class="color-silver">< ?= // esc($docwork)  ? ></h4> -->
 
 <h3 class="padtop40 color-white"><?= esc($title) ?></h3>
       
-<a href="export">Export</a>
+<a href="exportCSV">Export CSV</a><a href="exportPDF">Export PDF</a>
+
 
 <?php 
 //   row bg-silver

@@ -2,8 +2,10 @@
 
 namespace App\Controllers;
 
-use App\Models\SujetModel;
+//  class Controller
 use CodeIgniter\Controller;
+//  Model des sujets 
+use App\Models\SujetModel;
 
 class Sujet extends Controller {
 
@@ -100,9 +102,9 @@ class Sujet extends Controller {
 
 
   /**
-   * export des données en csv
+   * export de tous les sujets en cours (hors photos) en csv
    */
-  public function exportData() {
+  public function exportCSV() {
 
     // header('Content-type: text/csv');
     // header('Content-Disposition: attachment; filename="' . 'export_'.$object.'_'.date('Y-m-d_H-i-s').'.csv' . '"');
@@ -139,6 +141,8 @@ class Sujet extends Controller {
     exit;
 
   }
+
+
 }
 
 

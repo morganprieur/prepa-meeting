@@ -42,7 +42,9 @@ $routes->get('gup/(:segment)', 'Sujet::view/$1');
 // $routes->get('(:any)', 'Pages::view/$1');
 
 //	route test export csv 
-$routes->get('export', 'Sujet::exportData');
+$routes->get('exportCSV', 'Sujet::exportCSV');
+// $routes->get('exportPDF', 'PdfController::displayPdf');
+$routes->get('exportPDF', 'PdfController::htmlToPdf');
 
 //	success
 $routes->get('statics/success', 'Sujet::create');
