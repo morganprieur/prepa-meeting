@@ -36,10 +36,13 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->match(['get', 'post'], 'gup/new_subject', 'Sujet::create');
 // $routes->match(['get', 'post'], 'news/create', 'News::create');
-$routes->get('quartiers/', 'Quartier::index');
+// $routes->get('quartiers/', 'Quartier::index');
 $routes->get('gup/', 'Sujet::index');
 $routes->get('gup/(:segment)', 'Sujet::view/$1');
-$routes->get('(:any)', 'Pages::view/$1');
+// $routes->get('(:any)', 'Pages::view/$1');
+
+//	route test export csv 
+$routes->get('export', 'Sujet::exportData');
 
 //	success
 $routes->get('statics/success', 'Sujet::create');

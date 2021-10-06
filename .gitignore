@@ -125,9 +125,13 @@ nb-configuration.xml
 /phpunit*.xml
 /.phpunit.*.cache
 
-# dossiers persos 
+# dossier perso 
 perso/ 
 
 # workspace
 codecitoyen.code-workspace
+
+# exports 
+public/assets/exports
+
 

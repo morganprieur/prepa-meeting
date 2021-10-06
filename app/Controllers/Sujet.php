@@ -97,6 +97,48 @@ class Sujet extends Controller {
         echo view('templates/footer');
     }
   }
+
+
+  /**
+   * export des données en csv
+   */
+  public function exportData() {
+
+    // header('Content-type: text/csv');
+    // header('Content-Disposition: attachment; filename="' . 'export_'.$object.'_'.date('Y-m-d_H-i-s').'.csv' . '"');
+
+    //  exemple
+    $filename = 'sujets_'.date('Ymd').'.csv';
+    header("Content-Description: File Transfer");
+    header("Content-Disposition: attachement; filename=$filename");
+    header("Content-Type: application/csv;");
+    //  fin exemple 
+
+    // get data 
+    // 'sujet' => $sujet_model->getSujets($id)
+    $sujets = new SujetModel();
+    $sujetsData = $sujets->select('*')->findAll();
+
+    //  file creation 
+    $file = fopen('php://output', 'W');
+    // $file = fopen('/assets/exports', 'W');
+
+    $header = array("Identifiant", 
+                    "Sujet", 
+                    "Quartier", 
+                    "Adresse approx.", 
+                    "Déjà vu ?", 
+                    "Réponse si Oui", 
+                    "Suivi si Oui", 
+                    "Commentaire");
+    fputcsv($file, $header);
+    foreach($sujetsData as $key=>$line) {
+      fputcsv($file, $line);
+    }
+    fclose($file);
+    exit;
+
+  }
 }
 
 

@@ -1,4 +1,14 @@
 
+/************************ VARIABLES **********************************/
+
+:root {
+  --boutons_bleus : #35cfdb;
+  --boutons_roses : #ff7276;
+  --dark: #006573;
+  --light: #f8f9fa;
+}
+
+
 /************************ BALISES ************************************/
 body {
   background-color: #333;
@@ -37,10 +47,6 @@ table {
 }
 tr:first-child > th {
   background-color: silver;
-}
-table, th, td {
-  /* border: 1px solid black;  */
-  /* border-collapse: collapse; */
 }
 tr {
   min-height: 70px;
@@ -102,7 +108,7 @@ th, td {
 }
 .btn-orange {
   /* background-color: #ff8300; */
-  background-color: orangered;
+  background-color: #ff4500;
 }
 .one {
   width: 40%;
