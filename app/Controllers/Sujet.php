@@ -119,24 +119,71 @@ class Sujet extends Controller {
     // get data 
     // 'sujet' => $sujet_model->getSujets($id)
     $sujets = new SujetModel();
-    $sujetsData = $sujets->select('*')->findAll();
+    $sujetsDejaVus = $sujets->select('id, constat, quartier, adresse, deja_vu, reponse, suivi, commentaire')->findAll();
+    $sujetsNouveaux = $sujets->select('id, constat, quartier, adresse, deja_vu, commentaire')->findAll();
 
-    //  file creation 
-    $file = fopen('php://output', 'W');
+
+    // $date_today = date('d-m-Y');
+    // $date_form = str_replace('-', '/', $date_today);
+    $date_reunion = '08/11/2021';
+    
+    $file = fopen('php://output', 'a+');
+    // $file = fopen('php://output', 'W');
     // $file = fopen('/assets/exports', 'W');
 
-    $header = array("Identifiant", 
+    //  Titre page :
+    // $line_title = 'Réunion GUP du 08/11/2021'; 
+    $line_title = 'Réunion GUP du '.$date_reunion; 
+    $file_title = array($line_title, ' ', ' ', ' ', ' ', ' ', ' ', ' ');
+    fputcsv($file, $file_title);
+
+    $empty_line = array(" ", " ", " ", " ", " ", " ", " ", " ");
+    fputcsv($file, $empty_line);
+
+    $header_deja_vu = array("Identifiant", 
                     "Sujet", 
                     "Quartier", 
                     "Adresse approx.", 
                     "Déjà vu ?", 
-                    "Réponse si Oui", 
-                    "Suivi si Oui", 
+                    "Réponse", 
+                    "Suivi", 
                     "Commentaire");
-    fputcsv($file, $header);
-    foreach($sujetsData as $key=>$line) {
-      fputcsv($file, $line);
+    fputcsv($file, $header_deja_vu);
+    foreach($sujetsDejaVus as $key=>$line) {
+      if($line["deja_vu"] == ('OUI')) {
+        if($line["quartier"] == 'SAB')
+          fputcsv($file, $line);
+      }
     }
+    foreach($sujetsDejaVus as $key=>$line) {
+      if($line["deja_vu"] == ('OUI')) {
+        if($line["quartier"] == 'CEN')
+          fputcsv($file, $line);
+      }
+    }
+
+    fputcsv($file, $empty_line);
+
+    $header_new_subject = array("Identifiant", 
+                    "Sujet", 
+                    "Quartier", 
+                    "Adresse approx.", 
+                    "Déjà vu ?", 
+                    "Commentaire");
+    fputcsv($file, $header_new_subject);
+    foreach($sujetsNouveaux as $key=>$line) {
+      if($line["deja_vu"] == 'NON') {
+        if($line["quartier"] == 'SAB')
+          fputcsv($file, $line);
+      }
+    }
+    foreach($sujetsNouveaux as $key=>$line) {
+      if($line["deja_vu"] == 'NON') {
+        if($line["quartier"] == 'CEN')
+          fputcsv($file, $line);
+      }
+    }
+
     fclose($file);
     exit;
 
@@ -145,5 +192,10 @@ class Sujet extends Controller {
 
 }
 
-
+/*
+echo '<br>'.__METHOD__.' $line["deja_vu"] : ';
+var_dump($line["deja_vu"]);
+echo '<br>'.__METHOD__.' $line : ';
+var_dump($line);
+*/
 

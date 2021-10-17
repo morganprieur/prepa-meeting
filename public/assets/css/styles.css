@@ -107,8 +107,16 @@ th, td {
   min-height: 700px;
 }
 .btn-orange {
-  /* background-color: #ff8300; */
   background-color: #ff4500;
+  border: 1px gray solid;
+}
+.btn-orange:hover {
+  background-color: #ff6700;
+  border: 1px gray solid;
+}
+.exports {
+  width: 60%;
+  margin: 0 auto;
 }
 .one {
   width: 40%;
@@ -124,15 +132,43 @@ th, td {
   margin: 0 auto;
   /* border: 5px red solid; */
 }
-.actions-float p {
-  border: 1px gray solid;
-}
 .left {
   float: left;
 }
 .clear {
   clear: both;
 }
+
+
+/***************  TABLE *********************/
+
+table td.id {
+  width: 5%;
+}
+table td.constat {
+  width: 10%;
+}
+table td.quartier {
+  width: 10%;
+}
+table td.adresse {
+  width: 10%;
+}
+table td.deja_vu {
+  width: 5%;
+}
+table td.reponse {
+  width: 20%;
+}
+table td.suivi {
+  width: 20%;
+}
+table td.Commentaire {
+  width: 20%;
+}
+
+
+
 
 
 /***************  FORM  *********************/
