@@ -30,12 +30,7 @@ class Date_reunionModel extends Model {
 
     // echo '<br>'.__METHOD__.' $id : ';
     // var_dump($id);
-    // echo '<br>'.__METHOD__.' $date : ';
-    // var_dump($date);
-    // echo '<br>'.__METHOD__.' $this : ';
-    // var_dump($this);
     
-    // $this->db->where('id', $id);
     return $this->update(1, $date);
   }
   

@@ -31,7 +31,6 @@ class SujetModel extends Model {
     if($id == FALSE) {
       $sujets = $this->findAll();
 
-      // $i;
       $sujets_actifs = array();
       for($i = 0; $i < count($sujets); $i++) {
         if($sujets[$i]['resolu'] == '0') {
@@ -60,7 +59,7 @@ class SujetModel extends Model {
    * --> controller
    *      Sujet::create
    */
-  public function setSujet() {  //  id=FALSE 
+  public function setSujet() {  
 
     $data = [
       'constat' => $constat,
@@ -76,6 +75,15 @@ class SujetModel extends Model {
     //  voir la doc : 
     return $this->insert($data);
   }
+
+  public function update_sujet(int $id, array $data) {
+
+    // echo '<br>'.__METHOD__.' $id : ';
+    // var_dump($id);
+    
+    return $this->update($id, $date);
+  }
+
 }
 
 // echo '<br>'.__METHOD__.' $sujets[$i] : ';
