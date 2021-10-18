@@ -124,10 +124,10 @@ class Sujet extends Controller {
     header("Content-Type: application/csv;");
 
     
-    $date = new Date_reunionModel();
+    $date_model = new Date_reunionModel();
 
     $data = [
-      'date_reu' => $date->getDate_reunion()
+      'date_reu' => $date_model->getDate_reunion()
     ];
     
     // $date_today = date('d-m-Y');
@@ -149,7 +149,7 @@ class Sujet extends Controller {
 
     //  ligne vide 
     $empty_line = array(" ", " ", " ", " ", " ", " ", " ", " ");
-    
+
     fputcsv($file, $empty_line);
 
     $header_deja_vu = array("Identifiant", 
@@ -203,11 +203,4 @@ class Sujet extends Controller {
 
 
 }
-
-/*
-echo '<br>'.__METHOD__.' $line["deja_vu"] : ';
-var_dump($line["deja_vu"]);
-echo '<br>'.__METHOD__.' $line : ';
-var_dump($line);
-*/
 
