@@ -117,38 +117,39 @@ class Sujet extends Controller {
    */
   public function exportCSV() {
 
-    // header('Content-type: text/csv');
-    // header('Content-Disposition: attachment; filename="' . 'export_'.$object.'_'.date('Y-m-d_H-i-s').'.csv' . '"');
-
-    //  exemple
+    //  nom du fichier + date 
     $filename = 'sujets_'.date('Ymd').'.csv';
     header("Content-Description: File Transfer");
     header("Content-Disposition: attachement; filename=$filename");
     header("Content-Type: application/csv;");
-    //  fin exemple 
 
-    // get data 
-    // 'sujet' => $sujet_model->getSujets($id)
-    $sujets = new SujetModel();
-    $sujetsDejaVus = $sujets->select('id, constat, quartier, adresse, deja_vu, reponse, suivi, commentaire')->findAll();
-    $sujetsNouveaux = $sujets->select('id, constat, quartier, adresse, deja_vu, commentaire')->findAll();
+    
+    $date = new Date_reunionModel();
 
-
+    $data = [
+      'date_reu' => $date->getDate_reunion()
+    ];
+    
     // $date_today = date('d-m-Y');
     // $date_form = str_replace('-', '/', $date_today);
-    $date_reunion = '08/11/2021';
-    
+
     $file = fopen('php://output', 'a+');
     // $file = fopen('php://output', 'W');
     // $file = fopen('/assets/exports', 'W');
 
     //  Titre page :
-    // $line_title = 'Réunion GUP du 08/11/2021'; 
-    $line_title = 'Réunion GUP du '.$date_reunion; 
+    $line_title = 'Réunion GUP du '.$data['date_reu']['date_reu']; 
     $file_title = array($line_title, ' ', ' ', ' ', ' ', ' ', ' ', ' ');
     fputcsv($file, $file_title);
 
+    //  get sujets 
+    $sujets = new SujetModel();
+    $sujetsDejaVus = $sujets->select('id, constat, quartier, adresse, deja_vu, reponse, suivi, commentaire')->findAll();
+    $sujetsNouveaux = $sujets->select('id, constat, quartier, adresse, deja_vu, commentaire')->findAll();
+
+    //  ligne vide 
     $empty_line = array(" ", " ", " ", " ", " ", " ", " ", " ");
+    
     fputcsv($file, $empty_line);
 
     $header_deja_vu = array("Identifiant", 
