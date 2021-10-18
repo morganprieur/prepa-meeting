@@ -6,6 +6,9 @@ namespace App\Controllers;
 use CodeIgniter\Controller;
 //  Model des sujets 
 use App\Models\SujetModel;
+use App\Models\Date_reunionModel;
+
+use App\Controllers\Date_reunion;
 
 class Sujet extends Controller {
 
@@ -15,14 +18,22 @@ class Sujet extends Controller {
    */
   public function index() {
     $sujet_model = new SujetModel();
+    $date_control = new Date_reunion();
     
     $data = [
       'sujets' => $sujet_model->getSujets(),
       'title' => 'Tous les sujets',
-      'docwork' => 'Document de travail'
+      // 'docwork' => 'Document de travail'
     ];
+    // $date = [
+    //   'date_reu' => $date_control->date_reu()
+    // ];
 
     echo view('templates/header', $data);
+    $date = [
+      'date_reu' => $date_control->date_reu()
+    ];
+    // echo view('gup/date', $date);
     echo view('gup/all_sujets', $data);
     echo view('templates/footer', $data);
   }

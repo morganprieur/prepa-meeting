@@ -33,6 +33,10 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 
+//	pour tester update 
+$routes->get('gup/date', 'Date_reunion::date_reu');
+$routes->match(['get', 'post'], 'gup/modifier_date/(:segment)', 'Date_reunion::modify_date/$1');
+
 $routes->get('/', 'Home::index');
 $routes->match(['get', 'post'], 'gup/new_subject', 'Sujet::create');
 // $routes->match(['get', 'post'], 'news/create', 'News::create');

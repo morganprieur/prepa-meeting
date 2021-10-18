@@ -26,7 +26,7 @@ ini_set("display_errors", 1);
 
         <h1 class="text-center color-white">Conseil Citoyen st-gilles : tableau GUP</h1>
 
-        
+        <h3 class="padtop40 color-white"><?= esc($title) ?></h3>
 
 
 

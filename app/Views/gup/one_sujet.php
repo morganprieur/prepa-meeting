@@ -1,7 +1,9 @@
 
-<h4 style="font-size: 1.5em; margin-top: 30px; color: silver" class="color-silver"><?= esc($docwork) ?></h4>
+<!-- <h4 style="font-size: 1.5em; margin-top: 30px; color: silver" class="color-silver">
+  <?= esc($docwork) ?>
+</h4> -->
 
-<h3 class="padtop40 color-white"><?= esc($title) ?></h3>
+<!-- <h3 class="padtop40 color-white"><?= esc($title) ?></h3> -->
 
 <?php 
 
