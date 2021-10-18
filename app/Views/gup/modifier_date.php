@@ -4,9 +4,11 @@ echo '<div class="main one padtop40 color-silver">';
 
 echo \Config\Services::validation()->listErrors();
 
+// echo '<br>'.__METHOD__.' $id : ';
+// var_dump($id);
 
 echo 
-  '<form action="'.base_url("date_reunion/modify_date/1").'" method="post">'
+  '<form action="'.base_url("gup/modifier_date/".$id).'" method="post">'
     . csrf_field() . 
 
     '<div class="row mb-3">

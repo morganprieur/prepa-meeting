@@ -35,6 +35,7 @@ $routes->setAutoRoute(true);
 
 //	pour tester update 
 $routes->get('gup/date', 'Date_reunion::date_reu');
+// $routes->match(['get', 'post'], 'gup/modifier_date/(:segment)', 'Date_reunion::modify_date/$1');
 $routes->match(['get', 'post'], 'gup/modifier_date/(:segment)', 'Date_reunion::modify_date/$1');
 
 $routes->get('/', 'Home::index');
