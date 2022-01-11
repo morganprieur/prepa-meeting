@@ -237,6 +237,12 @@ class Sujet extends Controller {
           fputcsv($file, $line);
       }
     }
+    foreach($sujetsDejaVus as $key=>$line) {
+      if($line["deja_vu"] == ('OUI')) {
+        if($line["quartier"] == 'Les deux')
+          fputcsv($file, $line);
+      }
+    }
 
     fputcsv($file, $empty_line);
 
@@ -256,6 +262,12 @@ class Sujet extends Controller {
     foreach($sujetsNouveaux as $key=>$line) {
       if($line["deja_vu"] == 'NON') {
         if($line["quartier"] == 'CEN')
+          fputcsv($file, $line);
+      }
+    }
+    foreach($sujetsNouveaux as $key=>$line) {
+      if($line["deja_vu"] == 'NON') {
+        if($line["quartier"] == 'Les deux')
           fputcsv($file, $line);
       }
     }
