@@ -84,7 +84,7 @@ echo
 '<div id="new-subject" class="actions-float text-center row">
   <p class="btn btn-orange col-md-6 offset-3">
     <a href="/gup/new_subject"><i class="fas fa-plus"></i>&nbsp;
-      Enregistrer<br>
+      Ajouter<br>
       un sujet
     </a>
   </p>
