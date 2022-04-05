@@ -55,15 +55,15 @@ if (! empty($sujets) && is_array($sujets)) :
             <p>  
               <a class="btn btn-orange" href="/gup/'.esc($sujets_item['id'], 'url').'">Voir le sujet</a>
             </p>
+            <p>  
+              <a class="btn btn-orange" href="/gup/modifier_sujet/'.esc($sujets_item['id'], 'url').'">&nbsp;Modifier&nbsp;</a>
+            </p>
             
           </td>
         </tr>'; 
-        /**
-         * <p>  
-         *   <a class="btn btn-orange strike" href="#">&nbsp;Modifier&nbsp;</a>
-         * </p>
-         */
-
+        
+        
+        
         //  <td class="text-center">'. esc($sujets_item['resolu']) .'</td> 
           
 

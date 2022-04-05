@@ -72,22 +72,23 @@ class SujetModel extends Model {
       'resolu' => $resolu
     ];
 
-    //  voir la doc : 
     return $this->insert($data);
   }
 
+  /**
+   * update sujet 
+   * Modifier un sujet déjà enregistré 
+   * --> controller
+   *      Sujet::modify_subj
+   */
   public function update_sujet(int $id, array $data) {
-
-    // echo '<br>'.__METHOD__.' $id : ';
-    // var_dump($id);
     
-    return $this->update($id, $date);
+    return $this->update($id, $data);
   }
+
 
 }
 
-// echo '<br>'.__METHOD__.' $sujets[$i] : ';
-// var_dump($sujets[$i]);
 
 
 

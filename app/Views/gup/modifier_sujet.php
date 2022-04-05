@@ -17,7 +17,7 @@ echo
     '<div class="row mb-3">
         <div class="form-group col-md-12">
             <label class="form-label" for="constat">Constat&nbsp; (brièvement)&nbsp;</label>
-            <input class="form-control" type="input" name="constat" placeholder="'.esc($sujet['constat']).'" />
+            <input class="form-control" type="input" name="constat" value="'.esc($sujet['constat']).'" />
         </div>
     </div>
 
@@ -37,14 +37,14 @@ echo
     <div class="row mb-3">
         <div class="form-group col-md-12">
             <label class="form-label" for="adresse">Adresse approximative&nbsp;</label>
-            <input class="form-control" type="input" name="adresse" placeholder="'.esc($sujet['adresse']).'" />
+            <input class="form-control" type="input" name="adresse" value="'.esc($sujet['adresse']).'" />
         </div>
     </div>
 
     <div class="row mb-3">
         <div class="form-group col-md-12">
             <label class="form-label" for="commentaire">Commentaire&nbsp;</label><br>
-            <textarea rows="6" name="commentaire" placeholder="'.esc($sujet['commentaire']).'"></textarea>
+            <textarea rows="6" name="commentaire">'.esc($sujet['commentaire']).'</textarea>
         </div>
     </div>
 
@@ -64,14 +64,14 @@ echo
             <div class="row mb-3">
                 <div class="form-group col-md-12">
                     <label class="form-label" for="reponse">Réponse&nbsp;</label>
-                    <textarea rows="6" name="reponse" placeholder="'.esc($sujet['reponse']).'"></textarea>
+                    <textarea rows="6" name="reponse" value="'.esc($sujet['reponse']).'"></textarea>
                 </div>
             </div>
 
             <div class="row mb-3">
                 <div class="form-group col-md-12">
                     <label class="form-label" for="suivi">Suivi&nbsp;</label>
-                    <textarea rows="6" name="suivi" placeholder="'.esc($sujet['suivi']).'"></textarea>
+                    <textarea rows="6" name="suivi" value="'.esc($sujet['suivi']).'"></textarea>
                 </div>
             </div>
         </div>

@@ -42,7 +42,8 @@ $routes->match(['get', 'post'], 'gup/new_subject', 'Sujet::create');
 // $routes->match(['get', 'post'], 'news/create', 'News::create');
 $routes->get('gup/', 'Sujet::index');
 $routes->get('gup/(:segment)', 'Sujet::view/$1');
-$routes->get('gup/modifier_sujet/(:segment)', 'Sujet::modify_subj/$1');
+// $routes->get('gup/modifier_sujet/(:segment)', 'Sujet::modify_subj/$1');
+$routes->match(['get', 'post'], 'gup/modifier_sujet/(:segment)', 'Sujet::modify_subj/$1');
 // $routes->get('(:any)', 'Pages::view/$1');
 
 //	route test export csv 

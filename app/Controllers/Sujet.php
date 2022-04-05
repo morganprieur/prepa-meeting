@@ -83,7 +83,6 @@ class Sujet extends Controller {
     ])) {
         $sujet_model->save([
             'constat' => $this->request->getPost('constat'),
-            // 'slug'  => url_title($this->request->getPost('title'), '-', true),
             'quartier'  => $this->request->getPost('quartier'),
             'adresse'  => $this->request->getPost('adresse'),
             'commentaire'  => $this->request->getPost('commentaire'),
@@ -95,7 +94,6 @@ class Sujet extends Controller {
 
         echo view('templates/header', $data);
         echo view('statics/success', $data);
-        // echo view('templates/retour', $data);
         echo view('templates/footer');
 
         //  sinon afficher le formulaire 
@@ -109,7 +107,7 @@ class Sujet extends Controller {
 
   /**
    * Modifier un sujet :
-   * 1er affichage : form vierge (todo : prérempli)
+   * 1er affichage : form vierge 
    * 2è affichage : si validations ok --> envoie au model pour mettre à jour la bdd 
    */
   public function modify_subj(int $id = null) {  
@@ -117,29 +115,14 @@ class Sujet extends Controller {
     helper(['form', 'url']);
     
     $sujet_model = new SujetModel();
-    // echo '<br>'.__METHOD__.' $id : ';
-    // var_dump($id);
-    
-    // $id = $this->request->getVar('id');
-
-    // if ($this->request->getMethod() === 'post' && $this->validate([
-    //   // 'title' => 'required|min_length[3]|max_length[255]',
-    //   // 'body'  => 'required',
-    //   'constat' => 'required|max_length[240]'
-    // ])) {
-    //   $sujet_model->save([
-          
-    //   ]);
     
     $data = [
       'sujet' => $sujet_model->getSujets($id),
       'id' => $id, 
-      // 'date_reu' => $this->request->getVar('date_reu'),
       'title' => 'Modifier',
       'retour_title' => 'voir tous les sujets',
       'success' => 'Le sujet a bien été modifié', 
       'constat' => $this->request->getPost('constat'),
-      // 'slug'  => url_title($this->request->getPost('title'), '-', true),
       'quartier'  => $this->request->getPost('quartier'),
       'adresse'  => $this->request->getPost('adresse'),
       'commentaire'  => $this->request->getPost('commentaire'),
@@ -148,20 +131,17 @@ class Sujet extends Controller {
       'suivi'  => $this->request->getPost('suivi'),
       'resolu'  => $this->request->getPost('resolu')
     ];
-    
-    // echo '<br>'.__METHOD__.' $data : ';
-    // var_dump($data);
 
     if($this->request->getMethod() === 'post' && $this->validate([
       // 'title' => 'required|min_length[3]|max_length[255]',
       // 'body'  => 'required',
       'constat' => 'required|max_length[240]'
     ])) {
-      $save = $model->update_sujet($id, $data);
+
+      $save = $sujet_model->update_sujet($id, $data);
       
       echo view('templates/header', $data);
       echo view('statics/success', $data);
-      // echo view('templates/retour', $data);
       echo view('templates/footer');
 
       // return redirect()->to( base_url('student') );
